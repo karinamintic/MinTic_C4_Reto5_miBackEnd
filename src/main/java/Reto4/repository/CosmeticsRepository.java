@@ -32,9 +32,17 @@ public class CosmeticsRepository {
     public void update(Cosmetics cosmetics) {
         cosmeticsInterface.save(cosmetics);
     }
-    
+
     public void delete(Cosmetics cosmetics) {
         cosmeticsInterface.delete(cosmetics);
     }
-    
+
+    public List<Cosmetics> getByPrice(double price){
+        return cosmeticsInterface.findByPrice(price);
+    }
+
+    public List<Cosmetics> getByDescriptionContains(String description){
+        return cosmeticsInterface.findByDescriptionContainingIgnoreCase(description);
+    }
+
 }
